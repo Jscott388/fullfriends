@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Emails</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/modernizr-2.8.3.min.js') }}"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <form action="/friends/{{friend.id}}" method="POST" class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="first_name">First Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="first_name" class="form-control" id="first_name" value="{{friend.first_name}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="last_name">Last Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="last_name" class="form-control" id="last_name" value="{{friend.last_name}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Email:</label>
+                    <div class="col-sm-4">
+                        <input type="email" name="email" class="form-control" id="email" value="{{friend.email}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.11.2.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
